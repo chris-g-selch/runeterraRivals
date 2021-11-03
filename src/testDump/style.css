@@ -1,0 +1,24 @@
+
+
+.cardBlock{
+    width: 500px;
+    height: 75px;
+    border: 1px solid #000;
+    background-repeat:no-repeat;
+    background-size: contain, cover;
+}
+
+
+/*  Card.js*/
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+
+.cardImage {
+    display: block;
+    height: 350px;
+    width: 300px;
+}
+/* Card.js*/
