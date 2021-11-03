@@ -21,6 +21,7 @@ const DeckView = () => {
         const landmarksDeck = "CEBAEAIBAEWQGAIAAYERMAYBAMAACAYBAEDSMLQEAEAAWIRGF4CQCAQAAIAQEAIEAECACDQDAEAQSIBSAMBQABIIBI";
         const deck = DeckEncoder.decode(landmarksDeck);
         
+        
         let masterList = [...set1, ...set2, ...set3, ...set4, ...set5];
         let deckCodeList = [];
         //console.log(deck);
