@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import Chart from "chart.js/auto";
-import {colorFactionMapper, factionLabelTextMapper, buildManaCurveData} from "./randomExports";
+import { getRelativePosition } from 'chart.js/helpers';
+import {colorFactionMapper, factionLabelTextMapper} from "../../testDump/randomExports";
 
 const ManaChart = ({dispatch, chartData}) => {
     
@@ -23,8 +24,26 @@ const ManaChart = ({dispatch, chartData}) => {
             datasets: datasets
         }
 
+        let options = {
+            onClick: (e) => {
+            
+                //const canvasPosition = getRelativePosition(e, manaChart);
+                const points = manaChart.getElementsAtEventForMode(e, 'nearest', { intersect: true}, true);
+                if(points.length){
+                    const point = points[0];
+                    //can do datasets too
+
+                    const manaCost = manaChart.data.labels[point.index];
+                    console.log(manaCost);
+                    dispatch({ type:"filter-by-cost", payload: manaCost})
+
+                }
+
+            }
+        }
         const manaChart = new Chart(chartElement, {
-            data: data
+            data: data,
+            options: options
         })
 
         return () => {

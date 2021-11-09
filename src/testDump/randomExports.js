@@ -15,40 +15,6 @@ export const factionLabelTextMapper = {
     Demacia: "Demacia"
 }
 
-export const buildManaCurveData = (deck) => {
-    const flatMana = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 };
-    let data = {};
-    for ( let cardObj of deck ){
-        if( cardObj?.details?.cost === undefined ){
-            console.log(cardObj);
-            break;
-        }
-
-        if(data[cardObj.details.regionRef] === undefined)
-            data[cardObj.details.regionRef] = {...flatMana };
-
-        data[cardObj.details.regionRef][cardObj.details.cost] += cardObj.count;
-    }
-
-    console.log(data);    
-    return data;
-}
-
-export const buildRegionSplitCardData = (deck) => {
-    let data = {};
-    for(let obj of deck){
-        if(obj?.details?.regionRef === undefined){
-            console.log(`Missing details ${obj}`);
-            break;
-        }
-        
-        if(data[obj.details.regionRef] === undefined)
-            data[obj.details.regionRef] = 0;
-            
-        data[obj.details.regionRef] += obj.count;
-    }
-    return data;
-}
 
 export const buildChartData = (deck) => {
     const flatMana = { "0": 0, "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0 };
@@ -108,9 +74,22 @@ export const buildChartData = (deck) => {
 
         //keywords
         if(obj.details.keywordRefs.length > 0){
-            let keywordKey = ""
-            for ( let keyword of  obj.details.keywordRefs ){
-                keywordKey += keyword + "#";
+            let keywordKey = "";
+            for(let i = 0; i < obj.details.keywordRefs.length; i++ ){
+                //one
+                if(obj.details.keywordRefs.length == 1){
+                    keywordKey = obj.details.keywordRefs[i];
+                    continue;    
+                }
+
+                //last
+                if(i === obj.details.keywordRefs.length -1){
+                    keywordKey += obj.details.keywordRefs[i];
+                    continue;
+                }
+
+                //first/middle
+                keywordKey += obj.details.keywordRefs[i] + " ";
             }
 
             if(data[obj.details.regionRef].keywords[keywordKey] === undefined)

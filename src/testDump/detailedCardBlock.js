@@ -12,8 +12,10 @@ const DetailedCardBlock = ({card}) => {
 
     return(
         <>
-            <div className="cardBlock" data-url={url} style={{backgroundImage: `url(${url}), url(${otherBackground})`}} >
-                <span>{card.count}</span>ssss
+            <div className="cardBlock" >
+                <span>{card.count}</span>
+                <span>{card.details.name}</span>
+                <span>{card.details.cost}</span>
             </div> 
 
         </>

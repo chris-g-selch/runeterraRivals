@@ -4,8 +4,8 @@
     width: 500px;
     height: 75px;
     border: 1px solid #000;
-    background-repeat:no-repeat;
-    background-size: contain, cover;
+    display: flex;
+    justify-content: space-between;
 }
 
 
