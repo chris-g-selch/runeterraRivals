@@ -1,0 +1,30 @@
+:root{
+    box-sizing: border-box;
+}
+header {
+    background:cyan;
+}
+
+#logo {
+    height: 75px;
+    width: 100px;
+}
+#screen-wrapper {
+    width : 100vw;
+}
+
+#main-wrapper {
+    width: 80vw;
+    border: 1px solid red;
+    margin:auto; /*center*/
+    padding: 10px; /*Find a relative*/
+}
+
+#homeBanner {
+    background: #ccc;
+    width: 30vw;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    margin: 1vh auto 6vh auto;
+}

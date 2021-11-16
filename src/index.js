@@ -1,13 +1,14 @@
 import react from 'react'
 import reactDom from 'react-dom';
-import PlayerHistory from "./testDump/history";
-import Deck from "./testDump/deckView";
+import PlayerHistory from "./components/views/playerHistoryView";
+import Deck from "./components/views/deckView";
+import App from "./app.js";
 
 const kokuDeck = "CECQCAIDCQAQGBASAECAIEADAUBQCCINAQAQIJRHFU2AIAIBAMXACAIEAEAQGAYPAECQGBQCAEAQGMYBAUBQI";
 const landmarksDeck = "CEBAEAIBAEWQGAIAAYERMAYBAMAACAYBAEDSMLQEAEAAWIRGF4CQCAQAAIAQEAIEAECACDQDAEAQSIBSAMBQABIIBI";
 
 reactDom.render(
-    <Deck deckcode ={landmarksDeck} />,
+    <App />,
     document.getElementById('root')
 );
 
