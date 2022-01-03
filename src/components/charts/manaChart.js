@@ -53,7 +53,7 @@ const ManaChart = ({dispatch, chartData}) => {
     }, [chartData])
     
     return (
-        <div style={{width:400, height:200}}>
+        <div id="manaChartHolder">
             <canvas id="manaChart"></canvas>
         </div>
     )

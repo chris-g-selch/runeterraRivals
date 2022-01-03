@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+.btn--hide {
+    background: none;
+    border: none;
+}
+
+.breakdown {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.number {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.icon{
+    height: 25px;
+    width: 25px;
+    background-color: #ccc;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+/* 
+.icon::before {
+    height: 25px;
+    width: 25px;
+    background-color: #ccc;
+    display: block;
+    position: relative;
+} */
+
+.icon::after{
+    content: "";
+    height: 20px;
+    width: 20px;
+    display: block;
+    position: relative;
+}
+#common {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); 
+    transform: rotate(180deg);
+}
+#common::after{
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); 
+    background-color: red;
+}
+
+#rare{
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+#rare::after{
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    background-color:blue ;
+}
+
+#epic{
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+#epic::after{
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    background-color: purple;
+}
+
+#champion{
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+#champion::after{
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    background-color: gold;
+}

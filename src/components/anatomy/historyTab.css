@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+.tab {
+    
+    display: flex;
+    justify-content: space-around;
+    margin: 3vh 0 3vh 0;
+
+    transform: translateX(0);
+    opacity: 1;
+
+    /* border: 3px solid var(--brand-color);
+    border-radius: 10px; */
+    /*Elevation*/
+    box-shadow: 8px 10px 9px 2px rgba(0,0,0,0.76);
+    height: 240px;
+    transition: 150ms;
+}
+
+.tab h1, .tab h2 { margin: 0}
+
+
+.tab--preload {
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+.tab--brand {
+    background: var(--brand-color);
+}
+
+.tab--win {
+    background: #588063;
+}
+.tab--loss{
+    background: #db6363;
+}
+.tab--ai{
+    background: #549bc4;
+}
+.tab--flat{
+    box-shadow: 0px 0px;
+}
+.tab--border{
+    border: 1px solid #000;
+}
+
+.tab__stats {
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.tab__bigMessage {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5rem;
+}
+.tab__smallMessage {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+}
+
+.tab__vs {
+    margin: 0px auto 0px auto;
+    width: 100px;
+    height: 100px;
+}
+
+.tab__center {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    width: 100%;
+}
+

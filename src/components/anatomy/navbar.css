@@ -1,0 +1,6 @@
+header {
+    background: var(--nav);
+    display: flex;
+    justify-content: space-between;
+    padding: 1px 15px 1px 0px;
+}

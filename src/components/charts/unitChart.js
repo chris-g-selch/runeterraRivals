@@ -56,7 +56,7 @@ const UnitChart = ({ chartData, dispatch}) => {
     }, [chartData])
 
     return (
-        <div style={{height:300, width:300}}>
+        <div id="unitChartHolder">
             <canvas id="unitChart"></canvas>
         </div>
     )

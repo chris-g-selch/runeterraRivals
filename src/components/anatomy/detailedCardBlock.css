@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+/* Small Phone*/
+
+.detailedCard{
+    --width: 500px;
+    --margin: 3vh 0px 3vh 0px;
+}
+
+@media (max-width: 320px){
+    .detailedCard{
+        --width: 300px;
+        --margin: 3vh 0px 3vh 0px;
+    }
+}
+
+.detailedCard{
+    width: var(--width);
+    margin: var(--margin);
+}
+
+.detailedCard--Ionia {
+    background-color: var(--Ionia);
+}
+.detailedCard--PiltoverZaun {
+    background-color: var(--PiltoverZaun);
+}
+.detailedCard--Noxus {
+    background-color: var(--Noxus);
+}
+.detailedCard--Freljord {
+    background-color: var(--Freljord);
+}
+.detailedCard--Demacia {
+    background-color: var(--Demacia);
+}
+.detailedCard--Targon {
+    background-color: var(--Targon);
+}
+.detailedCard--ShadowIsles {
+    border-color: var(--ShadowIsles);
+    -webkit-text-stroke-color: var(--ShadowIsles);
+}
+.detailedCard--Shurima {
+    border-color: var(--Shurima);
+    -webkit-text-stroke-color: var(--Shurima);
+
+}
+.detailedCard--Bilgewater {
+    background-color: var(--Bilgewater);
+}
+.detailedCard--BandleCity {
+    background-color: var(--BandleCity);
+}
+
+.detailedCard__dropdown {
+    display: none;
+}
+
+.detailedCard__dropdown--show {
+    display: flex;
+    justify-content: center;
+}
+
+.detailedCard__content {
+    width: inherit;
+    height: 75px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    -webkit-text-stroke-width: 1px;
+
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Anton', sans-serif;
+}
+
+.detailedCard__text {
+    background-clip: text;
+    background-position: center;
+    -webkit-background-clip: text;
+    color: transparent;
+    width: 70%;
+    text-align: center;
+}
+
+.detailedCard__hover{
+    display: none;
+    position: absolute;
+}
+.detailedCard__hover--show{
+    display: block;
+}
+
+.detailedCard__hover > div{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 27vw;
+}
+
+.detailedCard__img {
+    width: 170px;
+    height: 256px;
+}

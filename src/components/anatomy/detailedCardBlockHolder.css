@@ -1,0 +1,57 @@
+
+#cardBlockHolder {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+#cardBlockHolder h1 {
+    color: var(--brand-color);
+    font-family: var(--brand-font);
+    flex-grow: 2;
+    display: flex;
+    margin: 0px;
+}
+
+#cardBlockHolder h1::before, #cardBlockHolder h1::after {
+    content: "";
+    display: block;
+    position: relative;    
+    height: 1vh;
+    margin-top: 1.5vh;
+    margin-right: 10px;
+
+    width: 10%;
+    background-color: var(--nav);
+}
+
+#cardBlockHolder h1::before {
+    border-top: .5vh solid var(--brand-color);
+}
+#cardBlockHolder h1::after {
+    margin-left: 10px;
+    width: 70%;
+    border-bottom: .3vh solid var(--brand-color);
+}
+.headingDecoration{
+    display: flex;
+    margin: 3vh 0 3vh 0;
+}
+.headingDecoration::before{
+    content: "";
+    display: inline-block;
+    width: 1vh;
+    height: 40px;
+    background-color: var(--nav);
+    border-top: .5vh solid var(--brand-color);
+    border-left: .5vh solid var(--brand-color);
+}
+
+/* Small Phone*/
+@media (max-width: 320px){
+    #cardBlockHolder {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+}

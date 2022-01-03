@@ -1,6 +1,6 @@
 import react, {useEffect} from "react";
 import Chart from "chart.js/auto";
-import {colorFactionMapper, factionLabelTextMapper} from "../../testDump/randomExports";
+import {keywordColorMapper} from "../../testDump/randomExports";
 
 const KeywordsChart = ({chartData, dispatch}) =>{
 
@@ -10,11 +10,14 @@ const KeywordsChart = ({chartData, dispatch}) =>{
          //Rebuild chart data
         
         let keywordData = {};
+        let keywordColors = []
         for(let factionRef in chartData){
             for(let key in chartData[factionRef].keywords){
                 
-                if(keywordData[key] === undefined)
+                if(keywordData[key] === undefined){
                     keywordData[key] = 0;
+                    keywordColors.push(keywordColorMapper[key])
+                }
 
                 keywordData[key] += chartData[factionRef].keywords[key];
             }            
@@ -23,7 +26,8 @@ const KeywordsChart = ({chartData, dispatch}) =>{
         const data = {
             labels: Object.keys(keywordData),
             datasets:[{
-                data: Object.values(keywordData)
+                data: Object.values(keywordData),
+                backgroundColor: keywordColors
             }]
         }
 
@@ -50,7 +54,7 @@ const KeywordsChart = ({chartData, dispatch}) =>{
     })
 
     return(
-        <div style={{height: 400, width: 400}}>
+        <div id="keywordsChartHolder">
             <canvas id="keywordsChart"></canvas>
         </div>
     )

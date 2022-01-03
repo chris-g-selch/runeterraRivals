@@ -1,10 +1,15 @@
 //Chart helper
 export const colorFactionMapper = {
-    Ionia: "#000",
-    PiltoverZaun: "#ccc",
-    Noxus: "#f00",
-    Freljord: "#34cceb",
-    Demacia: "#fcdb47"
+    Ionia: "#db9fb3",
+    PiltoverZaun: "#e9ad54",
+    Noxus: "#c54b48",
+    Freljord: "#90defa",
+    Demacia: "#e6d7b4",
+    Targon: "#5031e2",
+    ShadowIsles: "#0cac91",
+    Shurima: "#f4d434",
+    Bilgewater:"#b4563a",
+    BandleCity: "#bfce0c"
 }
 
 export const factionLabelTextMapper = {
@@ -12,7 +17,26 @@ export const factionLabelTextMapper = {
     Noxus: "Noxus",
     PiltoverZaun: "Piltover & Zaun",
     Freljord: "Freljord",
-    Demacia: "Demacia"
+    Demacia: "Demacia",
+    Targon: "Targon",
+    ShadowIsles: "Shadow Isles",
+    Shurima: "Shurima",
+    Bilgewater: "Bilgewater",
+    BandleCity: "Bandle City"
+}
+
+export const rarityColorMapper = {
+    common: "#6bd236",
+    rare: "#a5ffff",
+    champion: "#f7d32c",
+
+}
+
+export const keywordColorMapper = {
+    Fearsome:"#bf5c0b",
+    Slow: "#af44d1",
+    Fast: "#fbc527",
+    LastBreath: "#2cbce8"
 }
 
 

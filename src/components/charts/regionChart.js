@@ -1,7 +1,6 @@
 import react, {useEffect, useState} from "react";
 import Chart from "chart.js/auto";
 import {colorFactionMapper, factionLabelTextMapper} from "../../testDump/randomExports";
-import useDeckFilters from "../../hooks/useDeckFilters";
 
 const RegionChart = ({ dispatch, chartData}) => {
    
@@ -74,8 +73,8 @@ const RegionChart = ({ dispatch, chartData}) => {
  
     return(
         <>
-            <div style={{height:400, width: 400}}>
-                <canvas id="regionChart" width="400" height="400"></canvas>
+            <div id="regionChartHolder">
+                <canvas id="regionChart"></canvas>
             </div>
         </>
     )

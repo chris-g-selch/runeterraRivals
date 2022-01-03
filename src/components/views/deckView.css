@@ -1,0 +1,71 @@
+#deckViewContainer{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 350px 1fr 1fr;
+    grid-template-rows: 100px 1fr 1fr;
+    grid-template-areas: "chart top top"
+                         "chart b b"
+                         "chart b b";
+}
+
+#chartsContainer{
+    grid-area: chart;  
+}
+
+#cardBlockHolder{
+    grid-area: b;
+}
+
+#regionChartHolder {
+    width: 300px;
+    height: 300px;
+}
+
+#manaChartHolder {
+   width: 300px;
+   height: 150px;
+}
+
+#keywordsChartHolder {
+    height: 300px;
+    width: 300px;
+}
+
+#unitChartHolder {
+    height: 300px;
+    width: 300px;
+}
+
+@media(max-width: 320px){
+    #deckViewContainer{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: none;
+    }
+
+    #typeBreakdown {
+        grid-area: none;  
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    #chartsContainer{
+        grid-area: none;  
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    #cardBlockHolder{
+        grid-area: none;
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    #rarityBreakdown {
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+
+}

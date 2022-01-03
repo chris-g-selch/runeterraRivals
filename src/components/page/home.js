@@ -4,14 +4,22 @@ import { useParams } from "react-router-dom";
 
 const Home = () => {
     let params = useParams();
+    let returnElement = <PlayerHistoryView />;
+    if(params.summoner !== undefined && params.tag !== undefined){
+        
+        returnElement = <PlayerHistoryView summoner={params.summoner} tag={params.tag} />;
+    }
     
     return (
-        <div>
-            <div id="homeBanner"> 
-                <h1>Rune Rivals</h1>
+        <>  
+            <div id="image-background"> 
+                <h1 id="homeBanner">Runeterra Rivals</h1>
             </div>
-           <PlayerHistoryView />
-        </div>
+            <section id="main-wrapper">
+                { returnElement }
+            </section>
+           
+        </>
     )
 }
 

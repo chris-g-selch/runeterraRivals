@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300&display=swap');
+
+.playerCard{
+    width: 300px;
+}
+
+.playerCard__deck {
+    display: flex;
+    justify-items: space-around;
+}
+
+.playerCard__summoner{
+    font-size:30px;
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+}
+
+.playerCard__actions{
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+}

@@ -1,4 +1,6 @@
 import react from "react";
+import "./typeBreakdown.css";
+import commonPNG from "../../static/common.png";
 
 const RarityBreakdown = ({ chartData, dispatch}) => {
 
@@ -11,18 +13,22 @@ const RarityBreakdown = ({ chartData, dispatch}) => {
     }
 
     return (
-        <div>
+        <div id="rarityBreakdown" className="breakdown">
             <div>
-                <button onClick={() => {dispatch({ type:"filter-by-rarityRef", payload: "Common" })}}>Common</button> {rarityData.Common}
+                <button className="btn--hide" onClick={() => {dispatch({ type:"filter-by-rarityRef", payload: "Common" })}}><div id="common" className="icon"></div></button> 
+                <span className="number">{rarityData.Common}</span>
             </div>
             <div>
-                <button onClick={() => {dispatch({ type:"filter-by-rarityRef", payload: "Rare" })}}>Rare</button> {rarityData.Rare}
+                <button className="btn--hide" onClick={() => {dispatch({ type:"filter-by-rarityRef", payload: "Rare" })}}><div id="rare" className="icon"></div></button> 
+                <span className="number">{rarityData.Rare}</span>
             </div>
             <div>
-                <button onClick={() => {dispatch({ type:"filter-by-rarityRef", payload: "Epic" })}}>Epic</button> {rarityData.Epic}
+                <button className="btn--hide" onClick={() => {dispatch({ type:"filter-by-rarityRef", payload: "Epic" })}}><div id="epic" className="icon"></div></button>
+                <span className="number">{rarityData.Epic}</span>
             </div>
             <div>
-                <button onClick={() => {dispatch({ type:"filter-by-rarityRef", payload: "Champion" })}}>Champion</button> {rarityData.Champion}
+                <button className="btn--hide" onClick={() => {dispatch({ type:"filter-by-rarityRef", payload: "Champion" })}}><div id="champion" className="icon"></div></button> 
+                <span className="number">{rarityData.Champion}</span>
             </div>
         </div>
     )

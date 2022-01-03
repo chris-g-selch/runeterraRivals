@@ -1,0 +1,18 @@
+.searchPlayerControls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3vh;
+}
+.center {
+    display: flex;
+
+}
+
+.searchPlayerControls  input {
+    font-size: 3rem;
+    width: 50vw;
+    
+}
+.searchPlayerControls  select {
+    font-size: 3rem;
+}

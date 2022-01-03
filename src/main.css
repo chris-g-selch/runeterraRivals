@@ -1,30 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 :root{
     box-sizing: border-box;
+    --nav: #2b292c;
+    --brand-font: 'Bebas Neue', cursive;
+    --brand-color: rgba(134,97,63,255);
+    --Ionia: #db9fb3;
+    --PiltoverZaun: #e9ad54;
+    --Noxus: #c54b48;
+    --Freljord: #90defa;
+    --Demacia: #e6d7b4;
+    --Targon: #5031e2;
+    --ShadowIsles: #0cac91;
+    --Shurima: #f4d434;
+    --Bilgewater: #b4563a;
+    --BandleCity: #bfce0c;
 }
-header {
-    background:cyan;
+
+body {
+    background-color: #323234;
 }
 
 #logo {
-    height: 75px;
-    width: 100px;
+    font-family: var(--brand-font);
+    color: var(--brand-color);
 }
-#screen-wrapper {
-    width : 100vw;
+
+#logo div {
+    display: inline-block;
+    font-size: 40px;
 }
+
+#logo__circle {
+    height: 50px;
+    width: 50px;
+    border: 5px solid rgba(134,97,63,255);
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 5px;
+}
+
 
 #main-wrapper {
     width: 80vw;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin:auto; /*center*/
     padding: 10px; /*Find a relative*/
 }
 
-#homeBanner {
-    background: #ccc;
-    width: 30vw;
-    font-size: 3rem;
-    display: flex;
-    justify-content: center;
-    margin: 1vh auto 6vh auto;
+#image-background {
+    background-image: url("./riotData/set1-en_us/en_us/img/cards/01DE001-full.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 20%;
+    height: 35vh;
+    display: grid;
+    grid-template: 1fr/ 1fr;
+    justify-items: center;
 }
+
+
+#homeBanner {
+    font-family: var(--brand-font);
+    width: 30vw;
+    font-size: 5rem;
+    margin: auto;
+    text-align: center;
+    color: var(--brand-color);
+}
+

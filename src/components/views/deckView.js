@@ -13,10 +13,11 @@ import KeywordsChart from "../charts/keywordsChart";
 import { initialDecks, reducer } from "../../reducers/decks";
 import {buildChartData } from "../../testDump/randomExports";
 import CardGallery from "../../testDump/cardGallery";
-import DetailedCardBlockHolder from "../../testDump/detailedCardBlockHolder";
+import DetailedCardBlockHolder from "../anatomy/detailedCardBlockHolder";
 import TypeBreakdown from "../statblocks/typeBreakdown";
 import RarityBreakdown from "../statblocks/rarityBreakdown";
 import UnitChart from "../charts/unitChart";
+import "./deckView.css";
 
 const DeckView = ({deckcode}) => {
     let location = useLocation();
@@ -34,8 +35,6 @@ const DeckView = ({deckcode}) => {
             setDeckError(true);
         }
 
-
-        
         let masterList = [...set1, ...set2, ...set3, ...set4, ...set5];
         let deckCodeList = [];
         //console.log(deck);
@@ -73,17 +72,21 @@ const DeckView = ({deckcode}) => {
     //view
     const errorView = <h1>Error Loading Deck</h1>;
 
-    const view = <div>
-                    <button onClick={() => dispatch({ type:"reset" })}>reset</button>
-                    <RegionChart dispatch={dispatch} chartData={chartData} />
-                    <ManaChart  dispatch={dispatch} chartData={chartData} />
-                    <KeywordsChart dispatch={dispatch} chartData={chartData} />
+    const view =<>
+                <button onClick={() => dispatch({ type:"reset" })}>reset</button>
+                <div id="deckViewContainer">
+                    <div id="chartsContainer">
+                        <RegionChart dispatch={dispatch} chartData={chartData} />
+                        <ManaChart  dispatch={dispatch} chartData={chartData} />
+                        <KeywordsChart dispatch={dispatch} chartData={chartData} />    
+                        <UnitChart dispatch={dispatch} chartData={chartData} />
+                    </div>
                     <TypeBreakdown dispatch={dispatch} chartData={chartData} />
                     <RarityBreakdown dispatch={dispatch} chartData={chartData} />
-                    <UnitChart dispatch={dispatch} chartData={chartData} />
                     <DetailedCardBlockHolder deck={deckInfo.filtered} />
-                    <CardGallery deck={deckInfo.filtered} />
-                </div>;
+                    {/* <CardGallery deck={deckInfo.filtered} /> */}
+                </div>
+                </> ;
 
     //Render
     if (deckError)
