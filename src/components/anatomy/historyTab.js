@@ -33,9 +33,15 @@ const MatchHistoryTab = ({game_mode, game_type, game_start_time_utc, game_versio
     // };
 
     //Get out come
+    let riotExpeditions ="Power_XP1";
     let winnerPlayer = players.find(obj => obj.game_outcome === "win")
     let outcome = "ai";
-    if(winnerPlayer !== undefined) {
+    if(game_mode === riotExpeditions){
+        game_mode = "Expeditions";
+        players = [];
+    }
+
+    if(winnerPlayer !== undefined ) {
         outcome  = (winnerPlayer.summoner === summoner) ? "win" : "loss";
     }
     let matchDate = new Date(game_start_time_utc);
@@ -46,11 +52,11 @@ const MatchHistoryTab = ({game_mode, game_type, game_start_time_utc, game_versio
             <div className="tab__stats">
                 <h1>{game_mode}</h1>
                 <h2>{game_type}</h2>
-                {outcome !== "ai" && <img className="tab__vs" src={vsLogo} /> }
+                { players.lengths > 2 && <img className="tab__vs" src={vsLogo} /> }
                 {outcome !== "ai" && <span>{matchDate.toDateString()}</span> }
-                <span>{total_turn_count}</span>
+                {/* <span>{total_turn_count}</span> */}
             </div>
-            { players[1] && <PlayerCard {...players[1]} /> }
+            { players[1] && <PlayerCard css="playerCard--reverse" {...players[1]} /> }
         </div>
     )
 }

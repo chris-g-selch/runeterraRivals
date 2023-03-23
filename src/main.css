@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-:root{
-    box-sizing: border-box;
+body {
+    background-color: #323234;
+    margin: 0;
+}
+
+:root{    
     --nav: #2b292c;
     --brand-font: 'Bebas Neue', cursive;
     --brand-color: rgba(134,97,63,255);
@@ -15,11 +19,21 @@
     --Shurima: #f4d434;
     --Bilgewater: #b4563a;
     --BandleCity: #bfce0c;
+
+    --banner-height: 20vh;
+    --banner-text-size: 3rem;
+
+    box-sizing: border-box;
 }
 
-body {
-    background-color: #323234;
+@media (min-width: 320px) {
+    :root{
+        --banner-height: 20vh;
+        --banner-text-size: 3rem;
+        --wrapper-size: 95vw;
+    }
 }
+
 
 #logo {
     font-family: var(--brand-font);
@@ -42,28 +56,27 @@ body {
 
 
 #main-wrapper {
-    width: 80vw;
+    width: var(--wrapper-size);
     /* border: 1px solid red; */
     margin:auto; /*center*/
     padding: 10px; /*Find a relative*/
 }
 
-#image-background {
+#homeBanner {
     background-image: url("./riotData/set1-en_us/en_us/img/cards/01DE001-full.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 20%;
-    height: 35vh;
+    height: var(--banner-height);
     display: grid;
     grid-template: 1fr/ 1fr;
     justify-items: center;
 }
 
 
-#homeBanner {
+#homeBanner__text {
     font-family: var(--brand-font);
-    width: 30vw;
-    font-size: 5rem;
+    font-size: var(--banner-text-size);
     margin: auto;
     text-align: center;
     color: var(--brand-color);

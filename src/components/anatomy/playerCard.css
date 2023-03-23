@@ -1,16 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300&display=swap');
+@media (max-width: 320px){
+    .playerCard {
+        --direction: column;
+        --card-width: 300px;
+        --card-font-size: 1.2rem;
+        --image-size: 50px;
+        --button-size: 25px; 
+    }
+}
 
 .playerCard{
-    width: 300px;
+    width: var(--card-width);
+    display: flex;
+    flex-direction: var(--direction);
+}
+
+.playerCard--reverse {
+    flex-direction: column-reverse;
+}
+
+.playerCard__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.playerCard img {
+    width: var(--image-size);
+    height: var(--image-size);
 }
 
 .playerCard__deck {
     display: flex;
-    justify-items: space-around;
+    justify-content: center;
 }
 
 .playerCard__summoner{
-    font-size:30px;
+    font-size: var(--card-font-size);
     text-align: center;
     font-family: 'Outfit', sans-serif;
 }
@@ -19,4 +45,9 @@
     display: flex;
     gap: 20px;
     justify-content: space-around;
+}
+
+.playerCard__actions button {
+    width: var(--button-size);
+    height: var(--button-size);
 }

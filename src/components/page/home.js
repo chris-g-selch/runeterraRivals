@@ -12,8 +12,8 @@ const Home = () => {
     
     return (
         <>  
-            <div id="image-background"> 
-                <h1 id="homeBanner">Runeterra Rivals</h1>
+            <div id="homeBanner"> 
+                <h1 id="homeBanner__text">Runeterra Rivals</h1>
             </div>
             <section id="main-wrapper">
                 { returnElement }

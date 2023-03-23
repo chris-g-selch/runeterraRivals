@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useCallback} from "react";
 import axios from "axios";
 import PlatformService from "../../services/platform";
+import  {Send} from "@mui/icons-material"
 import HistoryTab from "../anatomy/historyTab";
 import LoadingMatchTab from "../anatomy/loadingMatchTab";
 import "./playerHistoryView.css";
@@ -157,8 +158,7 @@ const PlayerHistoryView = ({summoner, tag}) => {
         <>
             <div className="historyGrid">
                 <section className="searchPlayerControls">
-                    <div className="center">
-                        <form onSubmit={getHistory}>
+                    <form onSubmit={getHistory}>
                         <input type="text" name="summoner" placeholder="Search Summoner" value={formData.summoner} onChange={onChangeHandler} />
                         <select name="tag" onChange={onChangeHandler} value={formData.tag} >
                             <option value="Na1">NA 1</option>
@@ -166,14 +166,13 @@ const PlayerHistoryView = ({summoner, tag}) => {
                             <option value="BR1">BR 1</option>
                         </select>
                         {
-                            processingRequest && <button type="submit" disabled>Fire</button>
+                            processingRequest && <button type="submit" className="icon-button" disabled><Send /></button>
                             
                         }
                         {   
-                            !processingRequest && <button type="submit">Fire</button>
+                            !processingRequest && <button type="submit" className="icon-button"><Send /></button>
                         }
-                        </form>
-                    </div>
+                    </form>
                 </section>
                 <div className="match">
                 

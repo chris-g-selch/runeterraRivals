@@ -44,7 +44,6 @@ const App = () => {
                     <Navbar>
                         <Link to="/" ><div id="logo"><div id="logo__circle">R</div><div>Rivals</div></div></Link>
                         <Menu /> 
-                        {!user.isLoggedIn && <Link to="/login" >Login</Link>}
                     </Navbar>
                     
                     

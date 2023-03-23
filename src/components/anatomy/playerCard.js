@@ -10,7 +10,7 @@ import { UserContext } from "../../app";
 import message from "../../services/message";
 import PlatformService from "../../services/platform";
 
-const PlayerCard = ({deck_code, deck_id, factions, game_outcome, order_of_play, puuid, summoner, tag}) => {
+const PlayerCard = ({deck_code, deck_id, factions, game_outcome, order_of_play, puuid, summoner, tag, css}) => {
     const userContext = useContext(UserContext);
     const [open, setModalOpen] = useState(false);
     const navigate = useNavigate();
@@ -95,24 +95,26 @@ const PlayerCard = ({deck_code, deck_id, factions, game_outcome, order_of_play, 
                     </Typography>
                 </Box>
             </Modal>
-            <div className="playerCard">
-                <div className="playerCard__summoner">{summoner} {tag}</div>
-                <div className="playerCard__actions">
-                    <Tooltip title="Add Rival">
-                        <IconButton onClick={addRival} >
-                            <PersonAdd fontSize="large" />
-                        </IconButton>
-                    </Tooltip>
-                    <Tooltip title="View Match History">
-                        <IconButton onClick={SearchPlayer}>
-                            <History fontSize="large" />
-                        </IconButton>
-                    </Tooltip>
+            <div className={`playerCard ${css}`}>
+                <div className="playerCard__header">
+                    <div className="playerCard__actions">
+                        <Tooltip title="Add Rival">
+                            <IconButton onClick={addRival} >
+                                <PersonAdd fontSize="large" />
+                            </IconButton>
+                        </Tooltip>
+                        <Tooltip title="View Match History">
+                            <IconButton onClick={SearchPlayer}>
+                                <History fontSize="large" />
+                            </IconButton>
+                        </Tooltip>
+                    </div>
+                    <div className="playerCard__summoner">{summoner} {tag}</div>
                 </div>
                             
                 <Link to={`/Deck/${deck_code}`} className="playerCard__deck" >
                 {
-                    factionImages.map((obj, index) => <img height={150} width={150} key={index} src={obj} />)
+                    factionImages.map((obj, index) => <img key={index} src={obj} />)
                 }
                 </Link>
             </div>

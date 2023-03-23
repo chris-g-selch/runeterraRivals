@@ -1,0 +1,74 @@
+*{
+     --z-base: 1000; 
+     --force: 40vw; 
+
+
+    /*transformations to keep track of in case i make a lib in other project but can write own*/   
+    --right: translateX(calc(var(--force) * var(--i)));
+    --down: translateY(calc(var(--force) * var(--i)));
+    
+}
+
+/*Z- Configuration*/
+ /*The greatest z*/
+.layeredBox .layeredBox__head { z-index: var(--z-base); }
+.layeredBox .layeredBox__bone:nth-child(1) { --i: 0; z-index:calc(var(--z-base) - 1);}
+.layeredBox .layeredBox__bone:nth-child(2) { --i: 1; z-index:calc(var(--z-base) - 2);}
+.layeredBox .layeredBox__bone:nth-child(3) { --i: 2; z-index:calc(var(--z-base) - 3);}
+.layeredBox .layeredBox__bone:nth-child(4) { --i: 3; z-index:calc(var(--z-base) - 4);}
+.layeredBox .layeredBox__bone:nth-child(5) { --i: 4; z-index:calc(var(--z-base) - 5);}
+.layeredBox .layeredBox__bone:nth-child(6) { --i: 5; z-index:calc(var(--z-base) - 6);}
+.layeredBox .layeredBox__bone:nth-child(7) { --i: 6; z-index:calc(var(--z-base) - 7);}
+.layeredBox .layeredBox__bone:nth-child(8) { --i: 7; z-index:calc(var(--z-base) - 8);}
+
+.layeredBox.under .layeredBox__bone:nth-child(1) { --i: 0; z-index:calc(var(--z-base) + 1);}
+.layeredBox.under .layeredBox__bone:nth-child(2) { --i: 1; z-index:calc(var(--z-base) + 2);}
+.layeredBox.under .layeredBox__bone:nth-child(3) { --i: 2; z-index:calc(var(--z-base) + 3);}
+.layeredBox.under .layeredBox__bone:nth-child(4) { --i: 3; z-index:calc(var(--z-base) + 4);}
+.layeredBox.under .layeredBox__bone:nth-child(5) { --i: 4; z-index:calc(var(--z-base) + 5);}
+.layeredBox.under .layeredBox__bone:nth-child(6) { --i: 5; z-index:calc(var(--z-base) + 6);}
+.layeredBox.under .layeredBox__bone:nth-child(7) { --i: 6; z-index:calc(var(--z-base) + 7);}
+.layeredBox.under .layeredBox__bone:nth-child(8) { --i: 7; z-index:calc(var(--z-base) + 8);}
+
+.layeredBox {
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+}
+
+.layeredBox .layeredBox__head {
+    transition: 1.25s;
+}
+
+.layeredBox .layeredBox__bone {
+  position: absolute;
+  display: block;
+  transition: 0.5s;
+  transition-delay: calc(0.1s* var(--i));
+  transform-origin: 100px;
+}
+/*transformations but can write own*/   
+.layeredBox.active > .layeredBox__bone {
+  transform: var(--right);
+}
+
+
+
+/*Origin Debug Code For Rotations*/
+.layeredBox__debug {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.001);
+    transform-origin: inherit;
+  }
+  
+.layeredBox__debug::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background: rgba(255,128,128,0.75);
+    transform: scale(1000);
+ }

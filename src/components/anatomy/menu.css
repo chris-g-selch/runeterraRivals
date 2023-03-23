@@ -1,0 +1,15 @@
+@media (max-width: 320px) {
+    
+    #menu {
+        --icon-size: 50px;
+        width: var(--icon-size);
+    }
+}
+
+.menu-button  {
+    height: var(--icon-size);
+    width: var(--icon-size);
+    border-radius: 50%;
+}
+
+    

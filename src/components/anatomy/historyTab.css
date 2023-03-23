@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
 .tab {
-    
+    --direction: column;
+    --big-message-size: 5rem;
+    --small-message-size: 2rem;
+    --h1: 2rem;
+    --h2: 1rem;
     display: flex;
+    flex-direction: var(---direction);
     justify-content: space-around;
     margin: 3vh 0 3vh 0;
 
@@ -16,7 +21,8 @@
     height: 240px;
     transition: 150ms;
 }
-
+.tab h1 { font-size: var(--h1);  }
+.tab h2 { font-size: var(--h2); }
 .tab h1, .tab h2 { margin: 0}
 
 
@@ -55,11 +61,11 @@
 
 .tab__bigMessage {
     font-family: 'Orbitron', sans-serif;
-    font-size: 5rem;
+    font-size: var(--big-message-size);
 }
 .tab__smallMessage {
     font-family: 'Orbitron', sans-serif;
-    font-size: 2rem;
+    font-size: var(--small-message-size);
 }
 
 .tab__vs {
@@ -75,3 +81,12 @@
     width: 100%;
 }
 
+@media (min-width:320px) {
+    .tab{
+        ---direction: column;
+        --big-message-size: 2rem;
+        --small-message-size: .75rem;
+        --h1: 1rem;
+        --h2: .75rem;
+    }
+}
